@@ -6,36 +6,8 @@
     <title>Unity Web Player | PhinmaChronicles</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <style>
-      body {
-        background-color: grey;
-      }
-      nav {
-        background-color: #007BFF; /* Blue background */
-        padding: 15px; /* Increased padding */
-        text-align: center;
-        border-radius: 5px; /* Rounded corners */
-      }
-      nav a {
-        color: white;
-        margin: 0 20px; /* Increased margin */
-        text-decoration: none;
-        font-weight: bold; /* Bold text */
-        transition: color 0.3s, transform 0.3s; /* Transition effects */
-      }
-      nav a:hover {
-        color: yellow; /* Change text color on hover */
-        transform: scale(1.1); /* Scale effect on hover */
-      }
-    </style>
   </head>
   <body>
-    <nav> 
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Services</a>
-      <a href="#">Our Work</a>
-    </nav>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -83,9 +55,9 @@
       var loaderUrl = buildUrl + "/BuildWeb.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/BuildWeb.data.unityweb",
-        frameworkUrl: buildUrl + "/BuildWeb.framework.js.unityweb",
-        codeUrl: buildUrl + "/BuildWeb.wasm.unityweb",
+        dataUrl: buildUrl + "/BuildWeb.data",
+        frameworkUrl: buildUrl + "/BuildWeb.framework.js",
+        codeUrl: buildUrl + "/BuildWeb.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "PhinmaChronicles",
@@ -126,8 +98,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "1250px";
-        canvas.style.height = "500px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
